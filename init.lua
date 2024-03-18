@@ -101,6 +101,15 @@ vim.opt.guicursor = 'n-v-i-c:block-Cursor'
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- Set the number of spaces that a <Tab> in the file counts for.
+vim.opt.tabstop = 4
+
+-- Set the number of spaces to use for each step of (auto)indent.
+vim.opt.shiftwidth = 4
+
+-- Convert tabs to spaces.
+vim.opt.expandtab = true
+
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, for help with jumping.
@@ -230,7 +239,6 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -243,14 +251,21 @@ require('lazy').setup({
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
-
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
   {
     'windwp/nvim-ts-autotag',
     config = function()
       require('nvim-ts-autotag').setup()
     end,
   },
-
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    opts = {
+      scope = { enabled = false }, -- Disabling the current scope highlighting
+    },
+  },
   {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons', -- optional, for file icons
