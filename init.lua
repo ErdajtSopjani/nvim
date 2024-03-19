@@ -267,6 +267,15 @@ require('lazy').setup({
     },
   },
   {
+    'akinsho/bufferline.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require('bufferline').setup {}
+      vim.keymap.set('n', '<leader>bn', '<Cmd>BufferLineCycleNext<CR>', { noremap = true, silent = true })
+      vim.keymap.set('n', '<leader>bb', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+    end,
+  },
+  {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons', -- optional, for file icons
     config = function()
