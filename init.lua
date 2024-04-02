@@ -560,6 +560,12 @@ require('lazy').setup({
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+      local cmp_nvim_lsp = require 'cmp_nvim_lsp'
+
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.offsetEncoding = { 'utf-16' }
+      require('lspconfig').clangd.setup { capabilities = capabilities }
+
       require('mason-lspconfig').setup {
         handlers = {
           function(server_name)
