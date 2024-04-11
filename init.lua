@@ -176,7 +176,7 @@ require('lazy').setup({
     'sainnhe/everforest',
     config = function()
       vim.g.everforest_terminal_colors = 1
-      vim.g.everforest_background = 'hard'
+      vim.g.everforest_background = 'medium'
       vim.g.everforest_enable_italic = 1
       vim.g.everforest_better_performance = 1
       vim.g.everforest_cursor = 'aqua'
@@ -607,7 +607,12 @@ require('lazy').setup({
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.offsetEncoding = { 'utf-16' }
-      require('lspconfig').clangd.setup { capabilities = capabilities }
+      require('lspconfig').clangd.setup {
+        cmd = { 'clangd', '--background-index', '--clang-tidy' },
+        filetypes = { 'c', 'cpp', 'objc', 'objcpp' },
+        capabilities = capabilities,
+        single_file_support = true,
+      }
 
       require('mason-lspconfig').setup {
         handlers = {
