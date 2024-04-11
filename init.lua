@@ -173,7 +173,15 @@ require('lazy').setup({
     config = function()
       vim.g.everforest_background = 'medium'
       vim.g.everforest_enable_italic = 1
-      vim.g.everforest_better_performance = 1
+    end,
+  },
+  {
+    'sainnhe/gruvbox-material',
+    config = function()
+      vim.g.gruvbox_material_enable_italic = 1
+      vim.g.gruvbox_material_better_performance = 1
+      vim.g.gruvbox_material_background = 'medium'
+      vim.o.background = 'dark'
     end,
   },
   { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
