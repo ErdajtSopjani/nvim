@@ -181,7 +181,6 @@ require('lazy').setup({
       vim.g.gruvbox_material_enable_italic = 1
       vim.g.gruvbox_material_better_performance = 1
       vim.g.gruvbox_material_background = 'medium'
-      vim.o.background = 'dark'
     end,
   },
   { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
