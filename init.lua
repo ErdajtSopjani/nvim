@@ -7,8 +7,6 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
-vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
-
 --  Set cursor to fat cursor
 vim.opt.guicursor = 'n-v-i-c:block-Cursor'
 
@@ -167,23 +165,53 @@ require('lazy').setup({
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
-  { 'rose-pine/neovim', name = 'rose-pine' },
+  {
+    'rose-pine/neovim',
+    config = function()
+      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
+    end,
+    name = 'rose-pine',
+  },
   {
     'sainnhe/everforest',
     config = function()
-      vim.g.everforest_background = 'medium'
+      vim.g.everforest_terminal_colors = 1
+      vim.g.everforest_background = 'hard'
       vim.g.everforest_enable_italic = 1
+      vim.g.everforest_better_performance = 1
+      vim.g.everforest_cursor = 'aqua'
     end,
   },
   {
     'sainnhe/gruvbox-material',
     config = function()
+      vim.g.gruvbox_terminal_colors = 1
       vim.g.gruvbox_material_enable_italic = 1
       vim.g.gruvbox_material_better_performance = 1
       vim.g.gruvbox_material_background = 'medium'
+      vim.g.gruvbox_better_performance = 1
     end,
   },
-  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+  {
+    'sainnhe/sonokai',
+    config = function()
+      -- Available styles: default, atlantis, andromeda, shusia, maia, espresso
+      vim.g.sonokai_style = 'andromeda'
+      vim.g.sonokai_enable_italic = 1
+      vim.g.sonokai_disable_italic_comment = 0
+      vim.g.sonokai_terminal_colors = 1
+      -- for transparent background: vim.g.sonokai_transparent_background = 1
+      vim.g.sonokai_cursor = 'red'
+      vim.g.sonkai_better_performance = 1
+    end,
+  },
+  {
+    'catppuccin/nvim',
+    config = function()
+      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
+    end,
+    name = 'catppucin',
+  },
   {
     'windwp/nvim-ts-autotag',
     config = function()
@@ -738,7 +766,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'rose-pine-moon'
+      vim.cmd.colorscheme 'tokyonight-storm'
 
       -- You can configure highlights by doing something like
       vim.cmd.hi 'Comment gui=none'
