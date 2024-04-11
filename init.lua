@@ -173,6 +173,7 @@ require('lazy').setup({
     config = function()
       vim.g.everforest_background = 'medium'
       vim.g.everforest_enable_italic = 1
+      vim.g.everforest_better_performance = 1
     end,
   },
   { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
