@@ -168,6 +168,13 @@ require('lazy').setup({
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
   { 'rose-pine/neovim', name = 'rose-pine' },
+  {
+    'sainnhe/everforest',
+    config = function()
+      vim.g.everforest_background = 'medium'
+      vim.g.everforest_enable_italic = 1
+    end,
+  },
   { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
   {
     'windwp/nvim-ts-autotag',
