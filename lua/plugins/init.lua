@@ -19,6 +19,20 @@ require('lazy').setup({
   },
 
   {
+    'xiyaowong/transparent.nvim',
+    config = function()
+      require('transparent').setup {
+        enable = true, -- enable transparency
+        extra_groups = {
+          'NvimTreeNormal',
+          'NvimTreeNormalNC',
+          -- Add other groups
+        },
+      }
+      vim.api.nvim_set_keymap('n', '<leader>tt', ':TransparentToggle<CR>', { noremap = true, silent = true })
+    end,
+  },
+  {
     'goolord/alpha-nvim',
     config = function()
       require('plugins.configs.alpha').setup()
