@@ -22,7 +22,6 @@ require('lazy').setup({
     'xiyaowong/transparent.nvim',
     config = function()
       require('transparent').setup {
-        enable = true, -- enable transparency
         extra_groups = {
           'NvimTreeNormal',
           'NvimTreeNormalNC',
