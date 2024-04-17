@@ -1,4 +1,7 @@
-# ***My neovim config***
+<h1 align="center">My neovim config</h3>
+
+![Wed Apr 17 01:46:12 PM CEST 2024](https://github.com/ErdajtSopjani/nvim/assets/120386306/ecba5ffb-63f6-4ba3-a12e-3d52c8c4b6ec)
+
 <a name="readme-top"></a>
 
 
@@ -11,9 +14,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">Neovim config</h3>
-
-![Wed Apr 17 01:46:12 PM CEST 2024](https://github.com/ErdajtSopjani/nvim/assets/120386306/ecba5ffb-63f6-4ba3-a12e-3d52c8c4b6ec)
+  
+![Wed Apr 17 01:48:52 PM CEST 2024](https://github.com/ErdajtSopjani/nvim/assets/120386306/159dbad1-026a-4241-9886-b5de52311a73)
 
   <p align="center">
     My personal neovim config with all my plugins and shortcuts
@@ -30,7 +32,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About
 
-![Wed Apr 17 01:48:52 PM CEST 2024](https://github.com/ErdajtSopjani/nvim/assets/120386306/159dbad1-026a-4241-9886-b5de52311a73)
+![Wed Apr 17 02:25:58 PM CEST 2024](https://github.com/ErdajtSopjani/nvim/assets/120386306/86f3e3e4-de63-4729-94df-5a7b68026b78)
 
 Everyone needs their own setup or tweak to the software they use everyday, to guarantee productivity and most importantly ***fun*** while working/coding.
 
