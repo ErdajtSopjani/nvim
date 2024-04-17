@@ -36,15 +36,20 @@ Everyone needs their own setup or tweak to the software they use everyday, to gu
 
 This is just my config with these features
 * Language servers (LSP)'s
-* Custom transparency keybinds, for tiling wm users.
-* Custom terminal shortcuts to open terminals inside the editor in 3 possible places.
-* Telescope as a fuzzyfinder to quickly navigate through your codebase.
+* Custom transparency keybinds, for tiling wm users. ```<Leader>+t+t``` to toggle transparency
+* Custom terminal shortcuts to open terminals inside the editor in 3 possible places. ```<Alt>+1 or <Alt>+2 or <Alt>+3```
+* Telescope as a fuzzyfinder to quickly navigate through your codebase. ```<Leader>+s``` to see all available shortcuts
 * Bufferlines and Bufferwindows for better awareness while coding.
-* Nvimtree as the file *"tree"* for devs that are used to that.
-* Different colorschemes with a shortcut to switch between them.
+* Nvimtree as the file *"tree"* for devs that are used to that. ```<Leader>+e``` to toggle it
+* Different colorschemes with a shortcut to switch between them. ```<Leader>+t+h```
+
+The Leader key is set to space
 
 And alot more features that help you improve your productivity.
-I'm not suggesting you to use my config. I'm suggesting to make your own.
+I'm not suggesting you to use my config! 
+
+I'm suggesting you make your own. If you don't know how to get started check out [Kickstarter.nvim](https://github.com/nvim-lua/kickstart.nvim).
+It's how I started this config too as you can see in the commit history.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -90,6 +95,12 @@ Here are a couple of steps you can follow to get started with using nvim
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+
+If your're not familiar with vim/neovim and you want to get started open up neovim ```nvim``` and run ```:Tutor```.
+This will open up a window that will guide you through vim bindings: 
+
+![Wed Apr 17 02:14:02 PM CEST 2024](https://github.com/ErdajtSopjani/nvim/assets/120386306/a09e7840-f9ae-4c57-b613-ff9262c38bd8)
+
 
 If you want more info on the keybinds you can press SPACE as it's set as the main key.
 And a plugin called which key will guide you through the shortcuts:
