@@ -48,7 +48,8 @@ The Leader key is set to space
 And alot more features that help you improve your productivity.
 I'm not suggesting you to use my config! 
 
-I'm suggesting you make your own. If you don't know how to get started check out [Kickstarter.nvim](https://github.com/nvim-lua/kickstart.nvim).
+I'm suggesting you make your own, If you don't know how to get started check out: 
+    [Kickstarter.nvim](https://github.com/nvim-lua/kickstart.nvim).
 It's how I started this config too as you can see in the commit history.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
