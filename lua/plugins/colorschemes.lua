@@ -1,6 +1,12 @@
 -- colorschemes
 
 return {
+    {
+"rebelot/kanagawa.nvim"
+    },
+  {
+    'cpea2506/one_monokai.nvim',
+  },
   {
     'rose-pine/neovim',
     config = function()
@@ -22,7 +28,7 @@ return {
     'sainnhe/everforest',
     config = function()
       vim.g.everforest_terminal_colors = 1
-      vim.g.everforest_background = 'medium'
+      vim.g.everforest_background = 'hard'
       vim.g.everforest_enable_italic = 1
       vim.g.everforest_better_performance = 1
       vim.g.everforest_cursor = 'aqua'
