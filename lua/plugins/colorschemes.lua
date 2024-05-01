@@ -1,9 +1,9 @@
 -- colorschemes
 
 return {
-    {
-"rebelot/kanagawa.nvim"
-    },
+  {
+    'rebelot/kanagawa.nvim',
+  },
   {
     'cpea2506/one_monokai.nvim',
   },
