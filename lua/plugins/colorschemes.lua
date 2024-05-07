@@ -18,7 +18,7 @@ return {
   {
     'rose-pine/neovim',
     config = function()
-      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
+      -- vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
     end,
     name = 'rose-pine',
   },
@@ -72,7 +72,7 @@ return {
   {
     'catppuccin/nvim',
     config = function()
-      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
+      -- vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
     end,
     name = 'catppucin',
   },
