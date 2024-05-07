@@ -1,6 +1,7 @@
 -- colorschemes
 
 return {
+  { 'bluz71/vim-nightfly-colors' },
   { 'EdenEast/nightfox.nvim' },
   {
     'rebelot/kanagawa.nvim',
