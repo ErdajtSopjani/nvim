@@ -1,7 +1,13 @@
 -- colorschemes
 
 return {
-  { 'bluz71/vim-nightfly-colors' },
+  {
+    'bluz71/vim-nightfly-colors',
+    config = function()
+      -- Lua initialization file
+      vim.g.nightflyCursorColor = true
+    end,
+  },
   { 'EdenEast/nightfox.nvim' },
   {
     'rebelot/kanagawa.nvim',
