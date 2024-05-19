@@ -47,13 +47,13 @@ require('lazy').setup({
     end,
   },
 
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
-    opts = {
-      scope = { enabled = false }, -- Disabling the current scope highlighting
-    },
-  },
+  --{
+  --   'lukas-reineke/indent-blankline.nvim',
+  --  main = 'ibl',
+  --  opts = {
+  --    scope = { enabled = false }, -- Disabling the current scope highlighting
+  --  },
+  --},
 
   {
     'github/copilot.vim',
