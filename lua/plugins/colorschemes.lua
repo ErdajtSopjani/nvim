@@ -8,7 +8,14 @@ return {
       vim.g.nightflyCursorColor = true
     end,
   },
-  { 'EdenEast/nightfox.nvim' },
+
+  {
+    'EdenEast/nightfox.nvim',
+    config = function()
+      vim.cmd [[colorscheme nightfox]]
+    end,
+  },
+
   {
     'rebelot/kanagawa.nvim',
   },
@@ -41,7 +48,7 @@ return {
       vim.g.everforest_better_performance = 1
       vim.g.everforest_cursor = 'aqua'
       vim.cmd 'set termguicolors'
-      vim.cmd [[colorscheme everforest]]
+      -- vim.cmd [[colorscheme everforest]]
     end,
   },
 
