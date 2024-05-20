@@ -27,7 +27,7 @@ return {
     'folke/tokyonight.nvim',
     priority = 1000, -- make sure to load this before all the other start plugins
     init = function()
-      vim.cmd.colorscheme 'tokyonight-storm'
+      --vim.cmd.colorscheme 'tokyonight-storm'
       vim.cmd.hi 'Comment gui=none'
     end,
   },
@@ -40,6 +40,7 @@ return {
       vim.g.everforest_enable_italic = 1
       vim.g.everforest_better_performance = 1
       vim.g.everforest_cursor = 'aqua'
+      vim.cmd 'set termguicolors'
       vim.cmd [[colorscheme everforest]]
     end,
   },

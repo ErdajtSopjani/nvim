@@ -11,6 +11,11 @@ require('lazy').setup({
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
+  {
+    dir = '~/P9/code/lua/andromeda-nvim/',
+    name = 'andromeda',
+  },
+
   { -- terminal toggle
     'akinsho/toggleterm.nvim',
     config = function()
