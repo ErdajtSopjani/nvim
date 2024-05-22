@@ -12,7 +12,7 @@ return {
   {
     'EdenEast/nightfox.nvim',
     config = function()
-      vim.cmd [[colorscheme nightfox]]
+      -- vim.cmd [[colorscheme nightfox]]
     end,
   },
 
@@ -48,7 +48,7 @@ return {
       vim.g.everforest_better_performance = 1
       vim.g.everforest_cursor = 'aqua'
       vim.cmd 'set termguicolors'
-      -- vim.cmd [[colorscheme everforest]]
+      vim.cmd [[colorscheme everforest]]
     end,
   },
 
