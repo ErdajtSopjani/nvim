@@ -23,7 +23,7 @@ function M.setup()
       ['<M-n>'] = cmp.mapping.select_next_item(),
       ['<C-n>'] = cmp.mapping.select_next_item(),
       -- Select the [p]revious item
-      ['<M-p>'] = cmp.mapping.select_next_item(),
+      ['<M-p>'] = cmp.mapping.select_prev_item(),
       ['<C-p>'] = cmp.mapping.select_prev_item(),
 
       -- scroll the documentation window
