@@ -50,18 +50,21 @@ return {
     end,
   },
 
-  { -- Autoformat
+  {
+    -- Autoformat
     'stevearc/conform.nvim',
     opts = {
-      notify_on_error = false,
+      notify_on_error = true,
       format_on_save = function(bufnr)
-        local disable_filetypes = { c = true, cpp = true, cs = true } -- Disable "format_on_save lsp_fallback"
+        local disable_filetypes = { c = true, cpp = true, cs = true, php = false } -- Disable "format_on_save lsp_fallback"
         return {
-          timeout_ms = 500,
+          async = false,
+          timeout_ms = 1000,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
         }
       end,
       formatters_by_ft = {
+        php = { 'php-cs-fixer' },
         lua = { 'stylua' },
         c = { 'clang-format' },
         cpp = { 'clang-format' },
@@ -70,6 +73,17 @@ return {
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         -- javascript = { { "prettierd", "prettier" } },
+      },
+      formatters = {
+        ['php-cs-fixer'] = {
+          command = 'php-cs-fixer',
+          args = {
+            'fix',
+            '--rules=@PSR12', -- Formatting preset. Other presets are available, see the php-cs-fixer docs.
+            '$FILENAME',
+          },
+          stdin = false,
+        },
       },
     },
   },
