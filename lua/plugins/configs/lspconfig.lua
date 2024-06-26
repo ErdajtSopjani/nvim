@@ -101,6 +101,11 @@ function M.setup()
     --    https://github.com/pmizio/typescript-tools.nvim
     --
     -- But for many setups, the LSP (`tsserver`) will work just fine
+    phpactor = {
+      root_dir = function(fname)
+        return require('lspconfig/util').find_git_ancestor(fname) or vim.fn.getcwd()
+      end,
+    }, -- PHP
     gopls = {},
     tsserver = {}, -- TypeScript and JavaScript
     pyright = {}, -- Python
