@@ -101,10 +101,8 @@ function M.setup()
     --    https://github.com/pmizio/typescript-tools.nvim
     --
     -- But for many setups, the LSP (`tsserver`) will work just fine
-    phpactor = {
-      root_dir = function(fname)
-        return require('lspconfig/util').find_git_ancestor(fname) or vim.fn.getcwd()
-      end,
+    intelephense = {
+      root_dir = require('lspconfig').util.root_pattern('composer.json', '.git', '*.php'),
     }, -- PHP
     gopls = {},
     tsserver = {}, -- TypeScript and JavaScript
@@ -152,8 +150,17 @@ function M.setup()
   })
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
-  local cmp_nvim_lsp = require 'cmp_nvim_lsp'
+  require('lspconfig').intelephense.setup {
+    settings = {
+      intelephense = {
+        files = {
+          maxSize = 5000000, -- Adjusts file size limit to 5MB, change as needed
+        },
+      },
+    },
+  }
 
+  local cmp_nvim_lsp = require 'cmp_nvim_lsp'
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.offsetEncoding = { 'utf-16' }
   require('lspconfig').clangd.setup {
