@@ -76,12 +76,12 @@ require('lazy').setup({
   {
     'github/copilot.vim',
     config = function()
-      vim.keymap.set('i', '<D-j>', 'copilot#Accept("<CR>")', { expr = true, replace_keycodes = false })
+      vim.keymap.set('i', '<M-j>', 'copilot#Accept("<CR>")', { expr = true, replace_keycodes = false })
       vim.keymap.del('i', '<Tab>')
       vim.g.copilot_no_tab_map = true
       vim.g.copilot_assume_mapped = true
-      vim.keymap.set('i', '<D-w>', '<Plug>(copilot-accept-word)')
-      vim.keymap.set('i', '<D-n>', '<Plug>(copilot-next)')
+      vim.keymap.set('i', '<M-w>', '<Plug>(copilot-accept-word)')
+      vim.keymap.set('i', '<M-n>', '<Plug>(copilot-next)')
     end,
   },
 
