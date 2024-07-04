@@ -34,8 +34,30 @@ return {
     'folke/tokyonight.nvim',
     priority = 1000, -- make sure to load this before all the other start plugins
     init = function()
-      --vim.cmd.colorscheme 'tokyonight-storm'
+      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=pink]]
+      vim.cmd.colorscheme 'tokyonight-storm'
       vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  {
+    'navarasu/onedark.nvim',
+    config = function()
+      require('onedark').setup {
+        -- Main options --
+        style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+        code_style = {
+          comments = 'italic',
+          keywords = 'none',
+          functions = 'bold',
+          strings = 'none',
+          variables = 'italic',
+        },
+
+        lualine = {
+          transparent = true, -- lualine center bar transparency
+        },
+      }
     end,
   },
 
@@ -48,7 +70,7 @@ return {
       vim.g.everforest_better_performance = 1
       vim.g.everforest_cursor = 'aqua'
       vim.cmd 'set termguicolors'
-      vim.cmd [[colorscheme everforest]]
+      -- vim.cmd [[colorscheme everforest]]
     end,
   },
 

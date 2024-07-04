@@ -108,7 +108,14 @@ function M.setup()
     tsserver = {}, -- TypeScript and JavaScript
     pyright = {}, -- Python
     clangd = {}, -- C and C++
-    omnisharp = {}, -- C#
+    omnisharp = {
+      require('lspconfig').omnisharp.setup {
+        cmd = { 'omnisharp', '--languageserver' },
+        filetypes = { 'cs', 'vb', 'fs', 'cake', 'csx' },
+        root_dir = require('lspconfig').util.root_pattern('*.sln', '*.csproj', '*.fsproj', '*.cake', 'global.json', 'project.json'),
+        capabilities = capabilities,
+      },
+    }, -- C#
     rust_analyzer = {}, -- Rust
     html = {}, -- HTML
     tailwindcss = {}, -- TailwindCSS
@@ -160,8 +167,6 @@ function M.setup()
     },
   }
 
-  local cmp_nvim_lsp = require 'cmp_nvim_lsp'
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.offsetEncoding = { 'utf-16' }
   require('lspconfig').clangd.setup {
     cmd = { 'clangd', '--background-index', '--clang-tidy' },
