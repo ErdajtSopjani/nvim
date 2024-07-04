@@ -151,6 +151,11 @@ function M.setup()
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
   require('lspconfig').intelephense.setup {
+    on_attach = function(client)
+      -- Disable document formatting
+      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_range_formatting = false
+    end,
     settings = {
       intelephense = {
         files = {
@@ -160,8 +165,6 @@ function M.setup()
     },
   }
 
-  local cmp_nvim_lsp = require 'cmp_nvim_lsp'
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.offsetEncoding = { 'utf-16' }
   require('lspconfig').clangd.setup {
     cmd = { 'clangd', '--background-index', '--clang-tidy' },
