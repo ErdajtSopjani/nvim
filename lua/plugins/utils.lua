@@ -79,7 +79,7 @@ return {
           command = 'php-cs-fixer',
           args = {
             'fix',
-            '--rules={"@PSR12": true, "braces": {"allow_single_line_closure": true, "position_after_functions_and_oop_constructs": "same"}}', -- Explicitly enforce brace style
+            '--config=' .. '/home/erdajtt/.php-cs-fixer.php',
             '$FILENAME',
           },
           stdin = false,
