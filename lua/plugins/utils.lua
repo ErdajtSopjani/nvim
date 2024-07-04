@@ -79,7 +79,7 @@ return {
           command = 'php-cs-fixer',
           args = {
             'fix',
-            '--rules=@PSR12', -- Formatting preset. Other presets are available, see the php-cs-fixer docs.
+            '--config=' .. '$HOME/.php-cs-fixer.php',
             '$FILENAME',
           },
           stdin = false,
