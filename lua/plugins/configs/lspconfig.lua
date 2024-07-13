@@ -104,7 +104,8 @@ function M.setup()
     intelephense = {
       root_dir = require('lspconfig').util.root_pattern('composer.json', '.git', '*.php'),
     }, -- PHP
-    gopls = {},
+    gopls = {}, -- Golang
+    solargraph = {}, -- Ruby
     tsserver = {}, -- TypeScript and JavaScript
     pyright = {}, -- Python
     clangd = {}, -- C and C++
@@ -163,6 +164,12 @@ function M.setup()
         },
       },
     },
+  }
+
+  require('lspconfig').solargraph.setup {
+    cmd = { 'solargraph', 'stdio' },
+    filetypes = { 'ruby', 'rb' },
+    capabilities = capabilities,
   }
 
   capabilities.offsetEncoding = { 'utf-16' }

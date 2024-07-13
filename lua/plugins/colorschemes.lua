@@ -34,7 +34,7 @@ return {
     'folke/tokyonight.nvim',
     priority = 1000, -- make sure to load this before all the other start plugins
     init = function()
-      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=pink]]
+      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
       vim.cmd.colorscheme 'tokyonight-storm'
       vim.cmd.hi 'Comment gui=none'
     end,
