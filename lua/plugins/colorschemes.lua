@@ -34,9 +34,9 @@ return {
     'folke/tokyonight.nvim',
     priority = 1000, -- make sure to load this before all the other start plugins
     init = function()
-      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
-      vim.cmd.colorscheme 'tokyonight-storm'
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
+      -- vim.cmd.colorscheme 'tokyonight-storm'
+      -- vim.cmd.hi 'Comment gui=none'
     end,
   },
 
@@ -70,7 +70,7 @@ return {
       vim.g.everforest_better_performance = 1
       vim.g.everforest_cursor = 'aqua'
       vim.cmd 'set termguicolors'
-      -- vim.cmd [[colorscheme everforest]]
+      vim.cmd [[colorscheme everforest]]
     end,
   },
 
