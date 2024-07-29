@@ -9,6 +9,8 @@ return {
     end,
   },
 
+  { 'nanotech/jellybeans.vim' },
+
   {
     'EdenEast/nightfox.nvim',
     config = function()
@@ -34,12 +36,15 @@ return {
     'folke/tokyonight.nvim',
     priority = 1000, -- make sure to load this before all the other start plugins
     init = function()
-      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=pink]]
-      vim.cmd.colorscheme 'tokyonight-storm'
+      -- vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightblue]]
+      -- vim.cmd.colorscheme 'tokyonight-night'
       vim.cmd.hi 'Comment gui=none'
     end,
   },
-
+  {
+    'zenbones-theme/zenbones.nvim',
+  },
+  { 'rktjmp/lush.nvim' },
   {
     'navarasu/onedark.nvim',
     config = function()
@@ -70,7 +75,7 @@ return {
       vim.g.everforest_better_performance = 1
       vim.g.everforest_cursor = 'aqua'
       vim.cmd 'set termguicolors'
-      -- vim.cmd [[colorscheme everforest]]
+      vim.cmd [[colorscheme everforest]]
     end,
   },
 
@@ -81,6 +86,7 @@ return {
       vim.g.gruvbox_material_enable_italic = 1
       vim.g.gruvbox_material_better_performance = 1
       vim.g.gruvbox_material_background = 'medium'
+      vim.g.gruvbox_material_cursor = 'orange'
       vim.g.gruvbox_better_performance = 1
     end,
   },

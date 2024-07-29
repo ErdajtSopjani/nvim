@@ -104,18 +104,12 @@ function M.setup()
     intelephense = {
       root_dir = require('lspconfig').util.root_pattern('composer.json', '.git', '*.php'),
     }, -- PHP
-    gopls = {},
+    gopls = {}, -- Golang
+    solargraph = {}, -- Ruby
     tsserver = {}, -- TypeScript and JavaScript
     pyright = {}, -- Python
     clangd = {}, -- C and C++
-    omnisharp = {
-      require('lspconfig').omnisharp.setup {
-        cmd = { 'omnisharp', '--languageserver' },
-        filetypes = { 'cs', 'vb', 'fs', 'cake', 'csx' },
-        root_dir = require('lspconfig').util.root_pattern('*.sln', '*.csproj', '*.fsproj', '*.cake', 'global.json', 'project.json'),
-        capabilities = capabilities,
-      },
-    }, -- C#
+    omnisharp = {}, -- C#
     rust_analyzer = {}, -- Rust
     html = {}, -- HTML
     tailwindcss = {}, -- TailwindCSS
@@ -158,6 +152,11 @@ function M.setup()
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
   require('lspconfig').intelephense.setup {
+    on_attach = function(client)
+      -- Disable document formatting
+      client.resolved_capabilities.document_formatting = false
+      client.resolved_capabilities.document_range_formatting = false
+    end,
     settings = {
       intelephense = {
         files = {
@@ -165,6 +164,12 @@ function M.setup()
         },
       },
     },
+  }
+
+  require('lspconfig').solargraph.setup {
+    cmd = { 'solargraph', 'stdio' },
+    filetypes = { 'ruby', 'rb' },
+    capabilities = capabilities,
   }
 
   capabilities.offsetEncoding = { 'utf-16' }
