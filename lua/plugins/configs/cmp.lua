@@ -81,8 +81,10 @@ function M.setup()
     },
     sources = {
       { name = 'nvim_lsp' },
+      { name = 'vim-dadbod-completion' },
       { name = 'luasnip' },
       { name = 'path' },
+      { name = 'buffer', keyword_length = 5 },
     },
   }
 end
