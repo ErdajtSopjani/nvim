@@ -40,6 +40,7 @@ require('lazy').setup({
 
   { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
 
+  --[[
   { -- laravel plugin
     'adalessa/laravel.nvim',
     dependencies = {
@@ -57,6 +58,7 @@ require('lazy').setup({
     event = { 'VeryLazy' },
     config = true,
   },
+]]
 
   {
     'windwp/nvim-ts-autotag',
@@ -82,6 +84,16 @@ require('lazy').setup({
       vim.g.copilot_assume_mapped = true
       vim.keymap.set('i', '<D-w>', '<Plug>(copilot-accept-word)')
       vim.keymap.set('i', '<D-n>', '<Plug>(copilot-next)')
+    end,
+  },
+
+  { -- find/replace across multiple files
+    'nvim-pack/nvim-spectre',
+    keys = {
+      { '<F4>', '<cmd>Spectre<cr>', mode = { 'n' } },
+    },
+    config = function()
+      require('spectre').setup { is_block_ui_break = true }
     end,
   },
 
