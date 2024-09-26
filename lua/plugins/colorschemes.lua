@@ -34,16 +34,18 @@ return {
   },
 
   {
-    'folke/tokyonight.nvim',
-    init = function()
-      -- vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightblue]]
-      -- vim.cmd.colorscheme 'tokyonight-night'
-      vim.cmd.hi 'Comment gui=none'
-    end,
+    'Mofiqul/dracula.nvim',
+    config = function() end,
   },
 
   {
-    'zenbones-theme/zenbones.nvim',
+    'folke/tokyonight.nvim',
+    init = function()
+      vim.cmd 'set termguicolors'
+      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightblue]]
+      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.hi 'Comment gui=none' -- this is a hack to fix the comment color in the night version
+    end,
   },
 
   {
@@ -68,8 +70,8 @@ return {
       vim.g.gruvbox_material_cursor = 'aqua'
       vim.g.gruvbox_better_performance = 1
       vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
-      vim.cmd 'set termguicolors'
-      vim.cmd [[colorscheme gruvbox-material]]
+      -- vim.cmd 'set termguicolors'
+      -- vim.cmd [[colorscheme gruvbox-material]]
     end,
   },
 
