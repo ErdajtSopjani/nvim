@@ -10,6 +10,11 @@ return {
   },
 
   {
+    'projekt0n/github-nvim-theme',
+    lazy = true,
+  },
+
+  {
     'EdenEast/nightfox.nvim',
     config = function()
       -- vim.cmd [[colorscheme nightfox]]
@@ -19,9 +24,7 @@ return {
   {
     'rebelot/kanagawa.nvim',
   },
-  {
-    'cpea2506/one_monokai.nvim',
-  },
+
   {
     'rose-pine/neovim',
     config = function()
@@ -31,46 +34,29 @@ return {
   },
 
   {
-    'folke/tokyonight.nvim',
-    priority = 1000, -- make sure to load this before all the other start plugins
-    init = function()
-      -- vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
-      -- vim.cmd.colorscheme 'tokyonight-storm'
-      -- vim.cmd.hi 'Comment gui=none'
-    end,
+    'Mofiqul/dracula.nvim',
+    config = function() end,
   },
 
   {
-    'navarasu/onedark.nvim',
-    config = function()
-      require('onedark').setup {
-        -- Main options --
-        style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-        code_style = {
-          comments = 'italic',
-          keywords = 'none',
-          functions = 'bold',
-          strings = 'none',
-          variables = 'italic',
-        },
-
-        lualine = {
-          transparent = true, -- lualine center bar transparency
-        },
-      }
+    'folke/tokyonight.nvim',
+    init = function()
+      vim.cmd 'set termguicolors'
+      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightblue]]
+      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.hi 'Comment gui=none' -- this is a hack to fix the comment color in the night version
     end,
   },
 
   {
     'sainnhe/everforest',
     config = function()
-      vim.g.everforest_terminal_colors = 1
       vim.g.everforest_background = 'hard'
+      vim.g.everforest_terminal_colors = 1
       vim.g.everforest_enable_italic = 1
       vim.g.everforest_better_performance = 1
       vim.g.everforest_cursor = 'aqua'
-      vim.cmd 'set termguicolors'
-      vim.cmd [[colorscheme everforest]]
+      -- can set warning/error text to colored: vim.g.everforest_diagnostic_virtual_text = 'colored'
     end,
   },
 
@@ -80,22 +66,12 @@ return {
       vim.g.gruvbox_terminal_colors = 1
       vim.g.gruvbox_material_enable_italic = 1
       vim.g.gruvbox_material_better_performance = 1
-      vim.g.gruvbox_material_background = 'medium'
+      vim.g.gruvbox_material_background = 'hard'
+      vim.g.gruvbox_material_cursor = 'aqua'
       vim.g.gruvbox_better_performance = 1
-    end,
-  },
-
-  {
-    'sainnhe/sonokai',
-    config = function()
-      -- Available styles: default, atlantis, andromeda, shusia, maia, espresso
-      vim.g.sonokai_style = 'andromeda'
-      vim.g.sonokai_enable_italic = 1
-      vim.g.sonokai_disable_italic_comment = 0
-      vim.g.sonokai_terminal_colors = 1
-      -- for transparent background: vim.g.sonokai_transparent_background = 1
-      vim.g.sonokai_cursor = 'red'
-      vim.g.sonkai_better_performance = 1
+      vim.g.gruvbox_material_diagnostic_virtual_text = 'colored'
+      -- vim.cmd 'set termguicolors'
+      -- vim.cmd [[colorscheme gruvbox-material]]
     end,
   },
 

@@ -16,16 +16,16 @@ function M.setup()
     shell = vim.o.shell,
   }
   -- Terminal 1: Bottom horizontal part of the screen
-  vim.api.nvim_set_keymap('n', '<M-a>', '<Cmd>1ToggleTerm size=8 direction=horizontal<CR>', { noremap = true, silent = true })
-  vim.api.nvim_set_keymap('t', '<M-a>', '<Cmd>1ToggleTerm size=8 direction=horizontal<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', '<A-a>', '<Cmd>1ToggleTerm size=8 direction=horizontal<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('t', '<A-a>', '<Cmd>1ToggleTerm size=8 direction=horizontal<CR>', { noremap = true, silent = true })
 
   -- Terminal 2: Right vertical part of the screen
-  vim.api.nvim_set_keymap('n', '<M-s>', '<Cmd>2ToggleTerm size=40 direction=vertical<CR>', { noremap = true, silent = true })
-  vim.api.nvim_set_keymap('t', '<M-s>', '<Cmd>2ToggleTerm size=40 direction=vertical<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', '<A-s>', '<Cmd>2ToggleTerm size=40 direction=vertical<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('t', '<A-s>', '<Cmd>2ToggleTerm size=40 direction=vertical<CR>', { noremap = true, silent = true })
 
   -- Terminal 3: Floating terminal in the middle of the screen
-  vim.api.nvim_set_keymap('n', '<M-e>', '<Cmd>3ToggleTerm size=80 direction=float<CR>', { noremap = true, silent = true })
-  vim.api.nvim_set_keymap('t', '<M-e>', '<Cmd>3ToggleTerm size=80 direction=float<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('n', '<A-e>', '<Cmd>3ToggleTerm size=80 direction=float<CR>', { noremap = true, silent = true })
+  vim.api.nvim_set_keymap('t', '<A-e>', '<Cmd>3ToggleTerm size=80 direction=float<CR>', { noremap = true, silent = true })
 end
 
 return M

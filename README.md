@@ -14,7 +14,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  
+
 ![Wed Apr 17 01:48:52 PM CEST 2024](https://github.com/ErdajtSopjani/nvim/assets/120386306/159dbad1-026a-4241-9886-b5de52311a73)
 
   <p align="center">

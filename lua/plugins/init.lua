@@ -40,6 +40,7 @@ require('lazy').setup({
 
   { 'numToStr/Comment.nvim', opts = {} }, -- "gc" to comment visual regions/lines
 
+  --[[
   { -- laravel plugin
     'adalessa/laravel.nvim',
     dependencies = {
@@ -57,6 +58,7 @@ require('lazy').setup({
     event = { 'VeryLazy' },
     config = true,
   },
+]]
 
   {
     'windwp/nvim-ts-autotag',
@@ -76,12 +78,22 @@ require('lazy').setup({
   {
     'github/copilot.vim',
     config = function()
-      vim.keymap.set('i', '<M-j>', 'copilot#Accept("<CR>")', { expr = true, replace_keycodes = false })
+      vim.keymap.set('i', '<A-j>', 'copilot#Accept("<CR>")', { expr = true, replace_keycodes = false })
       vim.keymap.del('i', '<Tab>')
       vim.g.copilot_no_tab_map = true
       vim.g.copilot_assume_mapped = true
-      vim.keymap.set('i', '<M-w>', '<Plug>(copilot-accept-word)')
-      vim.keymap.set('i', '<M-n>', '<Plug>(copilot-next)')
+      vim.keymap.set('i', '<A-w>', '<Plug>(copilot-accept-word)')
+      vim.keymap.set('i', '<A-n>', '<Plug>(copilot-next)')
+    end,
+  },
+
+  { -- find/replace across multiple files
+    'nvim-pack/nvim-spectre',
+    keys = {
+      { '<F4>', '<cmd>Spectre<cr>', mode = { 'n' } },
+    },
+    config = function()
+      require('spectre').setup { is_block_ui_break = true }
     end,
   },
 
@@ -135,15 +147,13 @@ require('lazy').setup({
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     config = function() -- This is the function that runs, AFTER loading
-      require('which-key').setup()
-
       -- Document existing key chains
-      require('which-key').register {
-        ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
-        ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
-        ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
-        ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+      require('which-key').setup {
+        ['<leader>c'] = { name = '[C]ode' },
+        ['<leader>d'] = { name = '[D]ocument' },
+        ['<leader>r'] = { name = '[R]ename' },
+        ['<leader>s'] = { name = '[S]earch' },
+        ['<leader>w'] = { name = '[W]orkspace' },
       }
     end,
   },

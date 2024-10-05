@@ -97,7 +97,7 @@ return {
           command = 'php-cs-fixer',
           args = {
             'fix',
-            '--config=' .. '/home/erdajtt/.php-cs-fixer.php',
+            '--config=' .. '$HOME/.php-cs-fixer.php',
             '$FILENAME',
           },
           stdin = false,
@@ -188,7 +188,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'javascript', 'cpp', 'go', 'php' },
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {

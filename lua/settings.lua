@@ -49,14 +49,12 @@ vim.opt.splitbelow = true
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
-
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
-
 -- Show which line your cursor is on
 -- vim.opt.cursorline = true
--- disable the background of cursorline
--- vim.opt.cursorlineopt = 'number'
-
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- set true color
+vim.opt.termguicolors = true

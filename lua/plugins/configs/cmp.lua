@@ -12,6 +12,7 @@ function M.setup()
         luasnip.lsp_expand(args.body)
       end,
     },
+
     completion = { completeopt = 'menu,menuone,noinsert' },
 
     -- For an understanding of why these mappings were
@@ -20,24 +21,24 @@ function M.setup()
     -- No, but seriously. Please read `:help ins-completion`, it is really good!
     mapping = cmp.mapping.preset.insert {
       -- Select the [n]ext item
-      ['<M-n>'] = cmp.mapping.select_next_item(),
+      ['<A-n>'] = cmp.mapping.select_next_item(),
       ['<C-n>'] = cmp.mapping.select_next_item(),
       -- Select the [p]revious item
-      ['<M-p>'] = cmp.mapping.select_prev_item(),
+      ['<A-p>'] = cmp.mapping.select_prev_item(),
       ['<C-p>'] = cmp.mapping.select_prev_item(),
 
       -- scroll the documentation window
       -- [b]ack
-      ['<M-b>'] = cmp.mapping.select_next_item(),
+      ['<A-b>'] = cmp.mapping.select_next_item(),
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       -- [f]orward
-      ['<M-f>'] = cmp.mapping.select_next_item(),
+      ['<A-f>'] = cmp.mapping.select_next_item(),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
       -- Accept ([y]es) the completion.
       --  This will auto-import if your LSP supports it.
       --  This will expand snippets if the LSP sent a snippet.
-      ['<M-y>'] = cmp.mapping.confirm { select = true },
+      ['<A-y>'] = cmp.mapping.confirm { select = true },
       ['<C-y>'] = cmp.mapping.confirm { select = true },
 
       -- Manually trigger a completion from nvim-cmp.
@@ -52,7 +53,7 @@ function M.setup()
       --  end
       --
       -- <c-l> will move you to the right of each of the expansion locations.
-      ['<M-l>'] = cmp.mapping(function()
+      ['<A-l>'] = cmp.mapping(function()
         if luasnip.expand_or_locally_jumpable() then
           luasnip.expand_or_jump()
         end
@@ -64,7 +65,7 @@ function M.setup()
       end, { 'i', 's' }),
 
       -- <c-h> is similar, except moving you backwards.
-      ['<M-h>'] = cmp.mapping(function()
+      ['<A-h>'] = cmp.mapping(function()
         if luasnip.locally_jumpable(-1) then
           luasnip.jump(-1)
         end

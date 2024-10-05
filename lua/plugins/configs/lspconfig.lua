@@ -106,7 +106,7 @@ function M.setup()
     }, -- PHP
     gopls = {}, -- Golang
     solargraph = {}, -- Ruby
-    tsserver = {}, -- TypeScript and JavaScript
+    -- tsserver = {}, -- TypeScript and JavaScript
     pyright = {}, -- Python
     clangd = {}, -- C and C++
     omnisharp = {}, -- C#
