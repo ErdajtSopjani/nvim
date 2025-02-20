@@ -115,6 +115,55 @@ require('lazy').setup({
       require('nvim-tree').setup {}
       -- Keymap for <leader>e to toggle the nvim-tree
       vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+      vim.keymap.set('n', '<leader>a', function()
+        local api = require 'nvim-tree.api'
+        local node = api.tree.get_node_under_cursor()
+
+        local ignored_dirs = {
+          '.git',
+          '.github',
+          'apis',
+          'build',
+          'codegen',
+          'db',
+          'github.com',
+          'infra',
+          'layerfiles',
+          'icons',
+          'node_modules',
+          '.cache',
+          '.vscode',
+          '.idea',
+          'android',
+          'ios',
+          'venv',
+          'public',
+          'assets',
+          'docs',
+        }
+
+        if not node then
+          return
+        end
+
+        local function is_ignored(path)
+          for _, dir in ipairs(ignored_dirs) do
+            if path:find(dir, 1, true) then
+              return true
+            end
+          end
+          return false
+        end
+
+        if node.open then
+          api.tree.collapse_all()
+        else
+          local path = node.absolute_path or node.path or node.name
+          if not is_ignored(path) then
+            api.tree.expand_all()
+          end
+        end
+      end, { noremap = true, silent = true })
     end,
   },
 

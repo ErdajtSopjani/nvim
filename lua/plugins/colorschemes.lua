@@ -17,7 +17,9 @@ return {
   {
     'EdenEast/nightfox.nvim',
     config = function()
-      -- vim.cmd [[colorscheme nightfox]]
+      vim.cmd [[set termguicolors]]
+      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightblue]]
+      vim.cmd [[colorscheme nightfox]]
     end,
   },
 
@@ -41,10 +43,10 @@ return {
   {
     'folke/tokyonight.nvim',
     init = function()
-      vim.cmd 'set termguicolors'
-      vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightblue]]
-      vim.cmd.colorscheme 'tokyonight-night'
-      vim.cmd.hi 'Comment gui=none' -- this is a hack to fix the comment color in the night version
+      -- vim.cmd 'set termguicolors'
+      -- vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightblue]]
+      -- vim.cmd.colorscheme 'tokyonight-night'
+      -- vim.cmd.hi 'Comment gui=none' -- this is a hack to fix the comment color in the night version
     end,
   },
 

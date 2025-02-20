@@ -104,12 +104,13 @@ function M.setup()
     intelephense = {
       root_dir = require('lspconfig').util.root_pattern('composer.json', '.git', '*.php'),
     }, -- PHP
+    tsserver = {}, -- TypeScript and JavaScript
     gopls = {}, -- Golang
     solargraph = {}, -- Ruby
     -- tsserver = {}, -- TypeScript and JavaScript
     pyright = {}, -- Python
     clangd = {}, -- C and C++
-    omnisharp = {}, -- C#
+    csharp_ls = {}, -- C#
     rust_analyzer = {}, -- Rust
     html = {}, -- HTML
     tailwindcss = {}, -- TailwindCSS
