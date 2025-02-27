@@ -11,7 +11,11 @@ return {
 
   {
     'projekt0n/github-nvim-theme',
-    lazy = true,
+    init = function()
+      vim.cmd 'set termguicolors'
+      vim.cmd.colorscheme 'github_dark_default'
+      vim.cmd [[highlight Cursor guifg=pine guibg=lightpink]]
+    end,
   },
 
   {
@@ -47,12 +51,12 @@ return {
   {
     'folke/tokyonight.nvim',
     init = function()
-      vim.cmd 'set termguicolors'
-      vim.cmd.colorscheme 'tokyonight-moon'
-
-      vim.defer_fn(function()
-        vim.cmd [[highlight Cursor guifg=#FFFFFF guibg=lightgreen]]
-      end, 1)
+      -- vim.cmd 'set termguicolors'
+      -- vim.cmd.colorscheme 'tokyonight-moon'
+      --
+      -- vim.defer_fn(function()
+      --   vim.cmd [[highlight Cursor guifg=#FFFFFF guibg=lightgreen]]
+      -- end, 1)
     end,
   },
 

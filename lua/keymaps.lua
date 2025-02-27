@@ -37,3 +37,10 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 -- enable/disable copilot
 vim.keymap.set('n', '<leader>ce', '<cmd>Copilot enable<CR>', { desc = 'Enable Copilot' })
 vim.keymap.set('n', '<leader>cd', '<cmd>Copilot disable<CR>', { desc = 'Disable Copilot' })
+
+-- Neogit binds
+vim.keymap.set('n', 'mg', '<cmd>Neogit<CR>', { desc = 'Open Neogit' })
+vim.keymap.set('n', 'mc', '<cmd>Neogit commit<CR>', { desc = 'Open Neogit commit' })
+
+-- Git blame toggle
+vim.keymap.set('n', 'mgb', '<cmd>GitBlameToggle<CR>', { desc = 'Toggle Git Blame' })
