@@ -28,6 +28,10 @@ return {
   },
 
   {
+    'p00f/alabaster.nvim',
+  },
+
+  {
     'rose-pine/neovim',
     config = function()
       -- vim.cmd [[autocmd VimEnter * highlight Cursor guibg=lightpink]]
