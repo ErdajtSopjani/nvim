@@ -102,8 +102,8 @@ require('lazy').setup({
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
       require('bufferline').setup {
-        vim.keymap.set('n', '<leader>bn', '<Cmd>BufferLineCycleNext<CR>', { noremap = true, silent = true }),
-        vim.keymap.set('n', '<leader>bb', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true, silent = true }),
+        vim.keymap.set('n', 'qp', '<Cmd>BufferLineCycleNext<CR>', { noremap = true, silent = true }),
+        vim.keymap.set('n', 'pq', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true, silent = true }),
       }
     end,
   },

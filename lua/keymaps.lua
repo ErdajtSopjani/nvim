@@ -44,3 +44,6 @@ vim.keymap.set('n', 'mc', '<cmd>Neogit commit<CR>', { desc = 'Open Neogit commit
 
 -- Git blame toggle
 vim.keymap.set('n', 'mgb', '<cmd>GitBlameToggle<CR>', { desc = 'Toggle Git Blame' })
+
+-- Buffer commands
+vim.keymap.set('n', 'bd', '<cmd>bd<CR>', { desc = 'Close buffer' })
