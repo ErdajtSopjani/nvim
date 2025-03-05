@@ -90,7 +90,7 @@ require('lazy').setup({
   { -- find/replace across multiple files
     'nvim-pack/nvim-spectre',
     keys = {
-      { '<F4>', '<cmd>Spectre<cr>', mode = { 'n' } },
+      { 'mfr', '<cmd>Spectre<cr>', mode = { 'n' } },
     },
     config = function()
       require('spectre').setup { is_block_ui_break = true }
@@ -102,8 +102,8 @@ require('lazy').setup({
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
       require('bufferline').setup {
-        vim.keymap.set('n', 'qp', '<Cmd>BufferLineCycleNext<CR>', { noremap = true, silent = true }),
-        vim.keymap.set('n', 'pq', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true, silent = true }),
+        vim.keymap.set('n', 'L', '<Cmd>BufferLineCycleNext<CR>', { noremap = true, silent = true }),
+        vim.keymap.set('n', 'H', '<Cmd>BufferLineCyclePrev<CR>', { noremap = true, silent = true }),
       }
     end,
   },

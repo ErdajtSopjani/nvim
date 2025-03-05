@@ -1,4 +1,4 @@
--- useful plugins seperate on a "utils" file
+-- useful plugins seperate on a 'utils' file
 return {
   {
     'nvim-telescope/telescope.nvim', -- Fuzzy Finder (files, lsp, etc)
@@ -6,6 +6,7 @@ return {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
+      'jonarrien/telescope-cmdline.nvim',
       { -- If encountering errors, see telescope-fzf-native README for install instructions
         'nvim-telescope/telescope-fzf-native.nvim',
 
@@ -102,7 +103,7 @@ return {
     opts = {
       notify_on_error = true,
       format_on_save = function(bufnr)
-        local disable_filetypes = { c = true, cpp = true, cs = true, php = false } -- Disable "format_on_save lsp_fallback"
+        local disable_filetypes = { c = true, cpp = true, cs = true, php = false } -- Disable 'format_on_save lsp_fallback'
         return {
           async = false,
           timeout_ms = 1000,
@@ -116,10 +117,10 @@ return {
         cpp = { 'clang-format' },
         cs = { 'csharpier' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        -- python = { 'isort', 'black' },
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
-        -- javascript = { { "prettierd", "prettier" } },
+        -- javascript = { { 'prettierd', 'prettier' } },
       },
       formatters = {
         ['php-cs-fixer'] = {
