@@ -47,6 +47,3 @@ vim.keymap.set('n', 'mgb', '<cmd>GitBlameToggle<CR>', { desc = 'Toggle Git Blame
 
 -- Buffer commands
 vim.keymap.set('n', 'md', '<cmd>bd<CR>', { desc = 'Close buffer' })
-
--- Telescope command
-vim.api.nvim_set_keymap('n', 'P', ':Telescope cmdline<CR>', { noremap = true })

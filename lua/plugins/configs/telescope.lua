@@ -29,13 +29,6 @@ function M.setup()
     -- },
     -- pickers = {}
     extensions = {
-      cmdline = {
-        mappings = {
-          complete = '<Tab>',
-          run_selection = '<C-CR>',
-          run_input = '<CR>',
-        },
-      },
       ['ui-select'] = {
         require('telescope.themes').get_dropdown(),
       },

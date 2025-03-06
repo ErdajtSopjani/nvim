@@ -6,7 +6,6 @@ return {
     branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      'jonarrien/telescope-cmdline.nvim',
       { -- If encountering errors, see telescope-fzf-native README for install instructions
         'nvim-telescope/telescope-fzf-native.nvim',
 
@@ -30,6 +29,14 @@ return {
     end,
   },
 
+  {
+    'folke/trouble.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      require('trouble').setup {}
+    end,
+  },
+
   { -- SQL Database UI and completion
     'kristijanhusak/vim-dadbod-ui',
     dependencies = {
@@ -46,6 +53,37 @@ return {
       -- Your DBUI configuration
       vim.g.db_ui_use_nerd_fonts = 1
     end,
+  },
+
+  {
+    'folke/noice.nvim',
+    event = 'VeryLazy',
+    opts = {
+      messages = {
+        enabled = false,
+      },
+      lsp = {
+        override = {
+          ['lsp'] = true,
+        },
+        progress = {
+          enabled = true,
+        },
+      },
+      notify = {
+        enabled = false,
+      },
+      views = {
+        popup = {
+          enabled = false, -- Enable the popup window for messages
+          size = { width = 40, height = 10 }, -- Customize the size of the popup window
+        },
+      },
+    },
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
+    },
   },
 
   {
@@ -68,10 +106,7 @@ return {
       'nvim-lua/plenary.nvim', -- required
       'sindrets/diffview.nvim', -- optional - Diff integration
 
-      -- Only one of these is needed.
-      'nvim-telescope/telescope.nvim', -- optional
-      'ibhagwan/fzf-lua', -- optional
-      'echasnovski/mini.pick', -- optional
+      'nvim-telescope/telescope.nvim',
     },
     config = true,
   },
@@ -95,6 +130,10 @@ return {
     config = function()
       require('plugins.configs.lspconfig').setup()
     end,
+  },
+
+  {
+    'echasnovski/mini.icons',
   },
 
   {

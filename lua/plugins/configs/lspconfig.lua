@@ -105,7 +105,7 @@ function M.setup()
       root_dir = require('lspconfig').util.root_pattern('composer.json', '.git', '*.php'),
     }, -- PHP
     omnisharp = {}, -- C#
-    ts_ls = {}, -- TypeScript and JavaScript
+    tsserver = {}, -- TypeScript and JavaScript
     gopls = {}, -- Golang
     solargraph = {}, -- Ruby
     -- tsserver = {}, -- TypeScript and JavaScript
