@@ -58,31 +58,55 @@ return {
   {
     'folke/noice.nvim',
     event = 'VeryLazy',
+    dependencies = { 'MunifTanjim/nui.nvim' },
     opts = {
-      messages = {
-        enabled = false,
-      },
+      messages = { view = 'notify', view_warn = 'notify' },
       lsp = {
         override = {
-          ['lsp'] = true,
+          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
+          ['cmp.entry.get_documentation'] = true,
         },
         progress = {
           enabled = true,
+          throttle = 10000 / 30,
         },
       },
-      notify = {
-        enabled = false,
+      presets = {
+        bottom_search = false,
+        -- command_palette = true,
+        long_message_to_split = true,
+        -- inc_rename = true,
+        lsp_doc_border = true,
       },
-      views = {
-        popup = {
-          enabled = false, -- Enable the popup window for messages
-          size = { width = 40, height = 10 }, -- Customize the size of the popup window
+
+      errors = {
+        -- options for the message history that you get with `:Noice`
+        view = 'notify',
+        opts = { enter = true, format = 'details' },
+        filter = { error = true },
+        filter_opts = { reverse = true },
+      },
+      routes = {
+        {
+          filter = {
+            event = 'notify',
+            find = 'No information available',
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = 'msg_show',
+            any = {
+              { find = '%d+L, %d+B' },
+              { find = '; after #%d+' },
+              { find = '; before #%d+' },
+            },
+          },
+          view = 'notify',
         },
       },
-    },
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-      'rcarriga/nvim-notify',
     },
   },
 
@@ -130,10 +154,6 @@ return {
     config = function()
       require('plugins.configs.lspconfig').setup()
     end,
-  },
-
-  {
-    'echasnovski/mini.icons',
   },
 
   {
@@ -237,22 +257,32 @@ return {
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
       --  and try some other statusline plugin
-      local statusline = require 'mini.statusline'
+      -- local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
-      statusline.setup { use_icons = vim.g.have_nerd_font }
+      -- statusline.setup { use_icons = vim.g.have_nerd_font }
 
       -- You can configure sections in the statusline by overriding their
       -- default behavior. For example, here we set the section for
       -- cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return '%2l:%-2v'
-      end
+      -- statusline.section_location = function()
+      -- return '%2l:%-2v'
+      -- end
 
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
+
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {
+      theme = 'horizon',
+      icons_enabled = true,
+    },
+  },
+
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
