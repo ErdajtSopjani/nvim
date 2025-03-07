@@ -17,6 +17,8 @@
 
 ![Wed Apr 17 01:48:52 PM CEST 2024](https://github.com/ErdajtSopjani/nvim/assets/120386306/159dbad1-026a-4241-9886-b5de52311a73)
 
+<h2 align="center">NOTE: my config has been rewritten. for the old version go to: <a href="https://github.com/ErdajtSopjani/nvim/tree/old">Old branch</a>
+
   <p align="center">
     My personal neovim config with all my plugins and shortcuts
     <br />
