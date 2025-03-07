@@ -8,7 +8,7 @@ return {
 			options = {
 				indicator = { icon = "▎", style = "icon" },
 				offsets = {
-					{ filetype = "NvimTree", text = "File Explorer", text_align = "center", padding = 1 },
+					{ filetype = "NvimTree", text = "File Explorer", text_align = "center", padding = 0 },
 				},
 				separator_style = "thin",
 			},
@@ -49,6 +49,7 @@ return {
 		opts = {
 			options = {
 				theme = "auto",
+				height = 20,
 			},
 		},
 	},

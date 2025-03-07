@@ -3,15 +3,13 @@ return {
 		"f-person/git-blame.nvim",
 		event = "VeryLazy",
 		opts = {
-			enabled = false, -- if you want to enable the plugin
-			message_template = " <summary> • <date> • <author> • <<sha>>", -- template for the blame message, check the Message template section for more options
+			message_template = " <summary> • <date> • <author> • <<sha>>",
 			date_format = "%r",
 			message_when_not_committed = "Uncommitted changes",
 			delay = 0,
 			highlight_group = "Question",
-			virtual_text_column = 1, -- virtual text start column, check Start virtual text at column section for more options
+			virtual_text_column = 1,
 		},
-
 		config = function()
 			vim.keymap.set("n", "mgb", "<cmd>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
 		end,

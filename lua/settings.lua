@@ -58,3 +58,6 @@ vim.opt.scrolloff = 10
 
 -- set true color
 vim.opt.termguicolors = true
+
+vim.g.gitblame_enabled = 0
+vim.o.laststatus = 3
