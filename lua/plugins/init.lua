@@ -7,8 +7,14 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	require("plugins.utils"),
 	require("plugins.colorschemes"),
+	require("plugins.utils.cmp"),
+	require("plugins.utils.git"),
+	require("plugins.utils.snacks"),
+	require("plugins.utils.lsp"),
+	require("plugins.utils.formatting"),
+	require("plugins.utils.noice"),
+	require("plugins.utils.utils"),
 }, {
 	ui = {
 		-- If you have a Nerd Font, set icons to an empty table which will use the

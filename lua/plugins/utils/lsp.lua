@@ -3,6 +3,7 @@ return {
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Automatically install LSPs and related tools to stdpath for neovim
+			"hrsh7th/cmp-nvim-lsp", -- <— important
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -150,23 +151,21 @@ return {
 				},
 			}
 
-			-- Ensure the servers and tools above are installed
-			--  To check the current status of installed tools and/or manually install
-			--  other tools, you can run
-			--    :Mason
-			--
-			--  You can press `g?` for help in this menu
 			require("mason").setup()
 			require("mason-lspconfig").setup({
 				ensure_installed = vim.tbl_keys(servers),
 				automatic_installation = true,
 			})
 
-			-- You can add other tools here that you want Mason to install
-			-- for you, so that they are available from within Neovim.
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
-				"stylua", -- Used to format lua code
+				"stylua",
+				"gopls",
+				"html",
+				"pyright",
+				"tailwindcss-language-server",
+				"typescript-language-server",
+				"clangd",
 				"clang-format",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

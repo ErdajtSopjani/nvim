@@ -1,4 +1,35 @@
 return {
+	{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+
+	{
+		"akinsho/bufferline.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+		opts = {
+			options = {
+				indicator = { icon = "▎", style = "icon" },
+				offsets = {
+					{ filetype = "NvimTree", text = "File Explorer", text_align = "center", padding = 1 },
+				},
+				separator_style = "thin",
+			},
+		},
+		config = function()
+			require("bufferline").setup({
+				vim.keymap.set("n", "L", "<Cmd>BufferLineCycleNext<CR>", { noremap = true, silent = true }),
+				vim.keymap.set("n", "H", "<Cmd>BufferLineCyclePrev<CR>", { noremap = true, silent = true }),
+			})
+		end,
+	},
+
+	{
+		"nvim-lualine/lualine.nvim",
+		opts = {
+			options = {
+				theme = "auto",
+			},
+		},
+	},
+
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
@@ -19,6 +50,10 @@ return {
 			})
 			vim.api.nvim_set_keymap("n", "<leader>tt", ":TransparentToggle<CR>", { noremap = true, silent = true })
 		end,
+	},
+
+	{
+		"echasnovski/mini.icons",
 	},
 
 	{ "numToStr/Comment.nvim", opts = {} }, -- "gc" to comment visual regions/lines
@@ -68,8 +103,12 @@ return {
 	{
 		"github/copilot.vim",
 		config = function()
+			vim.keymap.set("n", "<leader>ce", "<cmd>Copilot enable<CR>", { desc = "Enable Copilot" })
+			vim.keymap.set("n", "<leader>cd", "<cmd>Copilot disable<CR>", { desc = "Disable Copilot" })
+
 			vim.keymap.set("i", "<A-j>", 'copilot#Accept("<CR>")', { expr = true, replace_keycodes = false })
 			vim.keymap.del("i", "<Tab>")
+
 			vim.g.copilot_no_tab_map = true
 			vim.g.copilot_assume_mapped = true
 			vim.keymap.set("i", "<A-w>", "<Plug>(copilot-accept-word)")

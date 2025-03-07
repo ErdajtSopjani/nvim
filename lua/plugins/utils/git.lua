@@ -11,6 +11,23 @@ return {
 			highlight_group = "Question",
 			virtual_text_column = 1, -- virtual text start column, check Start virtual text at column section for more options
 		},
+
+		config = function()
+			vim.keymap.set("n", "mgb", "<cmd>GitBlameToggle<CR>", { desc = "Toggle Git Blame" })
+		end,
+	},
+
+	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
+		"lewis6991/gitsigns.nvim",
+		opts = {
+			signs = {
+				add = { text = "+" },
+				change = { text = "~" },
+				delete = { text = "_" },
+				topdelete = { text = "‾" },
+				changedelete = { text = "~" },
+			},
+		},
 	},
 
 	{
