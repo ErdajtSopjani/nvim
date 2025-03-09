@@ -8,6 +8,13 @@ return {
 			luasnip.config.setup({})
 
 			cmp.setup({
+				window = {
+					documentation = {
+						max_height = 15,
+						max_width = 20,
+						border = "rounded",
+					},
+				},
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body)

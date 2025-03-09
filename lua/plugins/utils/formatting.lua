@@ -15,6 +15,7 @@ return {
 			formatters_by_ft = {
 				-- php = { "php-cs-fixer" },
 				lua = { "stylua" },
+				rust = { "rustfmt" },
 				-- c = { "clang-format" },
 				-- cpp = { "clang-format" },
 				cs = { "csharpier" },

@@ -306,7 +306,7 @@ local keys = {
 		desc = "Undo History",
 	},
 	{
-		"<leader>uC",
+		"<leader>th",
 		function()
 			Snacks.picker.colorschemes()
 		end,
