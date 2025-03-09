@@ -98,6 +98,8 @@ Here are a couple of steps you can follow to get started with using nvim
 
 
 
+For the new dashboard, install: `gh ext install meiji163/gh-notify`
+
 <!-- USAGE EXAMPLES -->
 ## Usage
 
