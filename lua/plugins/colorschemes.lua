@@ -1,11 +1,11 @@
 return {
 	{
 		"projekt0n/github-nvim-theme",
-		init = function()
-			vim.cmd("set termguicolors")
-			vim.cmd.colorscheme("github_dark_dimmed")
-			vim.cmd([[highlight Cursor guifg=pine guibg=lightpink]])
-		end,
+		-- init = function()
+		-- 	vim.cmd("set termguicolors")
+		-- 	vim.cmd.colorscheme("github_dark_dimmed")
+		-- 	vim.cmd([[highlight Cursor guifg=pine guibg=lightpink]])
+		-- end,
 	},
 
 	{
@@ -22,14 +22,15 @@ return {
 
 	{
 		"sainnhe/everforest",
-		-- config = function()
-		--   vim.g.everforest_background = 'hard'
-		--   vim.g.everforest_terminal_colors = 1
-		--   vim.g.everforest_enable_italic = 1
-		--   vim.g.everforest_better_performance = 1
-		--   vim.g.everforest_cursor = 'aqua'
-		--   -- can set warning/error text to colored: vim.g.everforest_diagnostic_virtual_text = 'colored'
-		-- end,
+		config = function()
+			vim.g.everforest_background = "hard"
+			vim.g.everforest_terminal_colors = 1
+			vim.g.everforest_enable_italic = 1
+			vim.g.everforest_better_performance = 1
+			vim.g.everforest_cursor = "aqua"
+			vim.cmd.colorscheme("everforest")
+			-- can set warning/error text to colored: vim.g.everforest_diagnostic_virtual_text = 'colored'
+		end,
 	},
 
 	{
